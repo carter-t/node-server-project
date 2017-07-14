@@ -1,0 +1,13 @@
+@import "./styles/_reset.scss";
+@import "./styles/_variables.scss";
+@import "./styles/_mixins.scss";
+
+@import "./components/Landing/_Landing.scss";
+@import "./components/Race/_Race.scss";
+
+body {
+  @include boxSize(100%, 100%);
+  background-color: black;
+  overflow: disabled;
+  font-family: sans-serif;
+}

@@ -1,0 +1,34 @@
+// Main Title
+.title-bar {
+  margin-top: 150px;
+  @include boxSize(110px, 100%);
+  @include flexIt(center, center);
+
+
+  .title-block {
+    @include boxSize(100%, 500px);
+    @include flexIt(center, center);
+
+    @include eightBit;
+    background: blue;
+    border: 10px solid red;
+  }
+}
+
+//Start Button
+.start-bar {
+  margin-top: 150px;
+  @include boxSize(80px, 100%);
+  @include flexIt(center, center);
+
+
+  .start-block {
+    margin-top: 3px;
+    @include boxSize(100%, 200px);
+    @include flexIt(center, center);
+
+    @include eightBit;
+    font-size: 70px;
+    background: black;
+  }
+}

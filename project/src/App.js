@@ -1,26 +1,36 @@
 import React, { Component } from 'react';
-import './styles/App.css';
+import {connect} from 'react-redux';
+import router from './router';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-
+      state: ''
     }
+  }
+
+  handleClick(event) {
+
   }
 
   render() {
     return (
-      <div className="App">
-        
-        <div className="title-bubble">
-          <h1 className="main-title"> React Quest! </h1>
-        </div>
+      <div>
+
+        {router}
 
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  console.log('store', state)
+  return {
+    state: ''
+  }
+}
+
+export default connect(mapStateToProps)(App);

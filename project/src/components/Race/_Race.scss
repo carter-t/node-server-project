@@ -1,0 +1,65 @@
+// Sub Title
+.sub-title-bar {
+  margin-top: 75px;
+  @include boxSize(80px, 100%);
+  @include flexIt(center, center);
+
+
+  .sub-title-block {
+    @include boxSize(100%, 500px);
+    @include flexIt(center, center);
+
+    @include eightBit;
+    background: blue;
+    border: 10px solid red;
+
+    font-size: 70px;
+  }
+}
+
+.main-bar {
+  margin-top: 75px;
+  @include boxSize(450px, 100%);
+  @include flexIt(space-around, stretch);
+
+
+  .main-block {
+    @include boxSize(100%, 25%);
+  
+
+    .image-block {
+      margin-top: 3px;
+      @include boxSize(80%, 100%);
+      background-color: black;
+    }
+
+
+    .button-block {
+      margin-top: 3px;
+      @include boxSize(17%, 100%);
+      @include flexIt(center, center);
+
+      @include eightBit;
+      font-size: 70px;
+      background: black;
+    }
+  }
+}
+
+.human-image {
+  background-image: url("./images/human.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.elf-image {
+  background-image: url("./images/elf.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.dwarf-image {
+  background-image: url("./images/dwarf.jpg");
+  background-size: cover;
+  background-position: center center;
+}

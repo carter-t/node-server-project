@@ -1,4 +1,12 @@
-import {createStore} from "redux";
-import reducer from './ducks/reducer';
+import {createStore, applyMiddleware, combineReducers} from "redux";
+import reduxPromiseMiddleware from 'redux-promise-middleware';
+import dungeonReducer from './ducks/dungeonReducer';
 
-export default createStore(reducer);
+const reducer = combineReducers({
+  dungeon: dungeonReducer
+})
+
+export default createStore(
+  reducer,
+  applyMiddleware(reduxPromiseMiddleware())
+);

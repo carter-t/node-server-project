@@ -6,7 +6,7 @@
 
 
   .sub-title-block {
-    @include boxSize(100%, 500px);
+    @include boxSize(100%, 530px);
     @include flexIt(center, center);
 
     @include eightBit;
@@ -48,20 +48,20 @@
 }
 
 //Images
-.human-image {
-  background-image: url("./images/human.jpg");
+.paladin-image {
+  background-image: url("./images/paladin.jpg");
   background-size: cover;
   background-position: center center;
 }
 
-.elf-image {
-  background-image: url("./images/elf.jpg");
+.wizard-image {
+  background-image: url("./images/wizard.png");
   background-size: cover;
   background-position: center center;
 }
 
-.dwarf-image {
-  background-image: url("./images/dwarf.jpg");
+.rogue-image {
+  background-image: url("./images/rogue.jpg");
   background-size: cover;
   background-position: center center;
 }

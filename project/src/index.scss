@@ -4,6 +4,7 @@
 
 @import "./components/Landing/_Landing.scss";
 @import "./components/Race/_Race.scss";
+@import "./components/Class/_Class.scss";
 
 body {
   @include boxSize(100%, 100%);

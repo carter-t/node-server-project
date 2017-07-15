@@ -13,21 +13,21 @@ export default function Race() {
       <div className="main-bar">
 
         <button className="main-block">
-          <Link to="/">
+          <Link to="/class">
             <div className="image-block human-image"></div>
             <h1 className="button-block"> Human </h1>
           </Link>
         </button>
 
         <button className="main-block">
-          <Link to="/">
+          <Link to="/class">
             <div className="image-block elf-image"></div>
             <h1 className="button-block"> Elf </h1>
           </Link>
         </button>
 
         <button className="main-block">
-          <Link to="/">
+          <Link to="/class">
             <div className="image-block dwarf-image"></div>
             <h1 className="button-block"> Dwarf </h1>
           </Link>

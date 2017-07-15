@@ -180,6 +180,87 @@ table {
   background-size: cover;
   background-position: center center; }
 
+.sub-title-bar {
+  margin-top: 75px;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .sub-title-bar .sub-title-block {
+    height: 100%;
+    width: 530px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    overflow: hidden;
+    border: none;
+    font: normal 100px/1 "VT323", Helvetica, sans-serif;
+    color: yellow;
+    text-align: center;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    text-shadow: 5px 5px 0 red;
+    background: blue;
+    border: 10px solid red;
+    font-size: 70px; }
+
+.main-bar {
+  margin-top: 75px;
+  height: 450px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch; }
+  .main-bar .main-block {
+    height: 100%;
+    width: 25%; }
+    .main-bar .main-block .image-block {
+      margin-top: 3px;
+      height: 80%;
+      width: 100%;
+      background-color: black; }
+    .main-bar .main-block .button-block {
+      margin-top: 3px;
+      height: 17%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      display: inline-block;
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      overflow: hidden;
+      border: none;
+      font: normal 100px/1 "VT323", Helvetica, sans-serif;
+      color: yellow;
+      text-align: center;
+      -o-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+      text-shadow: 5px 5px 0 red;
+      font-size: 70px;
+      background: black; }
+
+.paladin-image {
+  background-image: url("./images/paladin.jpg");
+  background-size: cover;
+  background-position: center center; }
+
+.wizard-image {
+  background-image: url("./images/wizard.png");
+  background-size: cover;
+  background-position: center center; }
+
+.rogue-image {
+  background-image: url("./images/rogue.jpg");
+  background-size: cover;
+  background-position: center center; }
+
 body {
   height: 100%;
   width: 100%;

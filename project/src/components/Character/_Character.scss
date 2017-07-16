@@ -21,9 +21,9 @@
 
   .info-bar-large {
     @include boxSize(35%, 100%);
-    @include flexIt(center, center);
+    @include flexIt(space-around, center);
 
-    .save-block {
+    .next-block {
       margin-top: 3px;
       @include boxSize(100%, 200px);
       @include flexIt(center, center);
@@ -37,7 +37,7 @@
 
 //Images
 .hero-image {
-  background-image: url("./images/hero.jpg");
+  background-image: url("./images/character.jpg");
   background-size: cover;
   background-position: center center;
 }

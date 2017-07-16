@@ -1,0 +1,68 @@
+//Content
+// .main-bar {
+//   margin-top: 40px;
+//   @include boxSize(550px, 100%);
+//   @include flexIt(space-around, stretch);
+
+
+  // .main-block {
+  //   @include boxSize(100%, 25%);
+  
+
+    .pic-block {
+      @include boxSize(35%, 100%);
+    }
+
+    .log-block {
+      @include boxSize(50%, 100%);
+      @include flexIt(center, center);
+      @include eightBit;
+      font-size: 55px;
+    }
+
+    .stat-button {
+      @include boxSize(15%, 100%);
+      @include flexIt(center, center);
+
+      .button-bar {
+        @include boxSize(100%, 100%);
+        @include flexIt(center, center);
+        @include eightBit;
+        font-size: 70px;
+        background-color: black;
+      }
+    }
+
+    .stat-bar {
+      @include boxSize(15%, 100%);
+      @include flexIt(center, center);
+      @include eightBit;
+      font-size: 55px;
+      background-color: black;
+    }
+
+    // .button-block {
+    //   @include boxSize(15%, 100%);
+    //   @include flexIt(center, center);
+
+    //   @include eightBit;
+    //   font-size: 70px;
+    //   background: black;
+    // }
+//   }
+// }
+
+//Images
+.hero-pic {
+  background-image: url("./images/hero.png");
+  background-size: 70%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.enemy-pic {
+  background-image: url("./images/enemy.jpg");
+  background-size: 60%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}

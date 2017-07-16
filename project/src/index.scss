@@ -6,6 +6,7 @@
 @import "./components/Race/_Race.scss";
 @import "./components/Class/_Class.scss";
 @import "./components/Character/_Character.scss";
+@import "./components/Battleground/_Battleground.scss";
 
 body {
   @include boxSize(100vh, 100vw);

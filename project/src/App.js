@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import router from './router';
 import {connect} from 'react-redux';
 
-import {postMonsters} from './dux/reducer';
-
 class App extends Component {
 
   // componentDidMount() {
@@ -15,10 +13,6 @@ class App extends Component {
   //   })
   // }
 
-  handleClick(event) {
-    this.props.postMonsters(this.state.monsters)
-  }
-
   render() {
     return (
       <div>
@@ -29,10 +23,9 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log('state:', state)
   return {
-    monsters: state.monsters
+    state: ''
   }
 }
 
-export default connect(mapStateToProps, {postMonsters})(App);
+export default connect(mapStateToProps)(App);

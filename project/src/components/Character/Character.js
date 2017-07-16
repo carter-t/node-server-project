@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 
-export default function Class() {
-
+class Character extends Component {
+  render() {
   return (
     <div>
 
@@ -28,12 +29,12 @@ export default function Class() {
 
             <div className="info-bar-small">
               <div> Race </div>
-              <div> Insert Race </div>
+              <div> {this.props.raceType} </div>
             </div>
 
             <div className="info-bar-small">
               <div> Class </div>
-              <div> Insert Class </div>
+              <div> {this.props.classType} </div>
             </div>
 
             <div className="info-bar-small">
@@ -42,9 +43,9 @@ export default function Class() {
             </div>
 
             <div className="info-bar-large">
-              <Link to="/">
+              <Link to="/battleground">
                 <button>
-                  <h1 className="save-block"> Save </h1>
+                  <h1 className="next-block"> Next </h1>
                 </button>
               </Link>
             </div>
@@ -55,4 +56,14 @@ export default function Class() {
 
     </div>
   );
+  }
 }
+
+function mapStateToProps(state) {
+  return {
+    nameType: '',
+    genType: ''
+  }
+}
+
+export default connect(mapStateToProps)(Character);

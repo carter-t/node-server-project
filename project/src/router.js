@@ -5,6 +5,7 @@ import Landing from './components/Landing/Landing';
 import Race from './components/Race/Race';
 import Class from './components/Class/Class';
 import Character from './components/Character/Character';
+import Battleground from './components/Battleground/Battleground'
 
 export default (
 
@@ -15,6 +16,7 @@ export default (
       <Route component={Race} path="/race" />
       <Route component={Class} path="/class" />
       <Route component={Character} path="/character" />
+      <Route component={Battleground} path="/battleground" />
 
     </div>
   </HashRouter>

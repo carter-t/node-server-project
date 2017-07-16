@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
-export default function Race() {
+export default class Race extends Component {
 
+  render() {
   return (
     <div>
 
@@ -37,4 +38,5 @@ export default function Race() {
 
     </div>
   );
+  }
 }

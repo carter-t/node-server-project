@@ -5,10 +5,11 @@
 @import "./components/Landing/_Landing.scss";
 @import "./components/Race/_Race.scss";
 @import "./components/Class/_Class.scss";
+@import "./components/Character/_Character.scss";
 
 body {
-  @include boxSize(100%, 100%);
+  @include boxSize(100vh, 100vw);
   background-color: black;
-  overflow: disabled;
+  overflow: hidden;
   font-family: sans-serif;
 }

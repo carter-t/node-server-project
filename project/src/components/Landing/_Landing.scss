@@ -1,24 +1,25 @@
 //Main Title
 .title-bar {
-  margin-top: 150px;
-  @include boxSize(110px, 100%);
+  margin-top: 20vh;
+  @include boxSize(20vh, 100vw);
   @include flexIt(center, center);
 
 
   .title-block {
-    @include boxSize(100%, 500px);
+    @include boxSize(100%, 60%);
     @include flexIt(center, center);
 
     @include eightBit;
     background: blue;
     border: 10px solid red;
+    font-size: 130px;
   }
 }
 
 //Start Button
 .start-bar {
-  margin-top: 150px;
-  @include boxSize(80px, 100%);
+  margin-top: 20vh;
+  @include boxSize(20vh, 100vw);
   @include flexIt(center, center);
 
 

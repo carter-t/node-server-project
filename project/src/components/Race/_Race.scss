@@ -1,12 +1,12 @@
 //Sub Title
 .sub-title-bar {
-  margin-top: 75px;
+  margin-top: 40px;
   @include boxSize(80px, 100%);
   @include flexIt(center, center);
 
 
   .sub-title-block {
-    @include boxSize(100%, 500px);
+    @include boxSize(100%, 550px);
     @include flexIt(center, center);
 
     @include eightBit;
@@ -19,8 +19,8 @@
 
 //Content
 .main-bar {
-  margin-top: 75px;
-  @include boxSize(450px, 100%);
+  margin-top: 40px;
+  @include boxSize(550px, 100%);
   @include flexIt(space-around, stretch);
 
 
@@ -29,15 +29,13 @@
   
 
     .image-block {
-      margin-top: 3px;
-      @include boxSize(80%, 100%);
-      background-color: black;
+      @include boxSize(85%, 100%);
+      background-color: white;
     }
 
 
     .button-block {
-      margin-top: 3px;
-      @include boxSize(17%, 100%);
+      @include boxSize(15%, 100%);
       @include flexIt(center, center);
 
       @include eightBit;
@@ -57,7 +55,7 @@
 .elf-image {
   background-image: url("./images/elf.jpg");
   background-size: cover;
-  background-position: center center;
+  background-position: center top;
 }
 
 .dwarf-image {

@@ -1,49 +1,38 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
 import router from './router';
+import {connect} from 'react-redux';
 
-// import dungeonReducer from './ducks/dungeonReducer';
-import {postRaces} from './ducks/dungeonReducer';
-import {getRaces} from './api';
+import {postMonsters} from './dux/reducer';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      races: []
-    }
-  }
-
-  componentDidMount() {
-    getRaces()
-    .then(races => {
-      this.setState({
-        races: races
-      })
-    })
-  }
-
-  // handleClick(event) {
-
+  // componentDidMount() {
+  //   getMonsters()
+  //   .then(monsters => {
+  //     this.setState({
+  //       monsters: monsters
+  //     })
+  //   })
   // }
+
+  handleClick(event) {
+    this.props.postMonsters(this.state.monsters)
+  }
 
   render() {
     return (
       <div>
-
         {router}
-
       </div>
     );
   }
 }
 
 function mapStateToProps(state) {
-  console.log("the state:", state);
+  console.log('state:', state)
   return {
-    races: state.dungeon.races
+    monsters: state.monsters
   }
 }
 
-export default connect(mapStateToProps, {postRaces})(App);
+export default connect(mapStateToProps, {postMonsters})(App);

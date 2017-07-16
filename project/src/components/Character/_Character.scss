@@ -1,0 +1,43 @@
+//Form Blocks
+.half-block {
+  @include boxSize(100%, 45%);
+  @include eightBit;
+  font-size: 50px;
+
+
+  .info-bar-small {
+    padding: 0 20px 0 20px;
+    @include boxSize(15%, 100%);
+    @include flexIt(space-between, center);
+
+
+    .input-line {
+      @include boxSize(35px, 40%);
+      font-family: Courier;
+      color: #33ff66;
+      background-color: black;
+    }
+  }
+
+  .info-bar-large {
+    @include boxSize(35%, 100%);
+    @include flexIt(center, center);
+
+    .save-block {
+      margin-top: 3px;
+      @include boxSize(100%, 200px);
+      @include flexIt(center, center);
+
+      @include eightBit;
+      font-size: 70px;
+      background: black;
+    }
+  }
+}
+
+//Images
+.hero-image {
+  background-image: url("./images/hero.jpg");
+  background-size: cover;
+  background-position: center center;
+}

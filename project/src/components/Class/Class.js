@@ -13,21 +13,21 @@ export default function Class() {
       <div className="main-bar">
 
         <button className="main-block">
-          <Link to="/">
+          <Link to="/character">
             <div className="image-block paladin-image"></div>
             <h1 className="button-block"> Paladin </h1>
           </Link>
         </button>
 
         <button className="main-block">
-          <Link to="/">
+          <Link to="/character">
             <div className="image-block wizard-image"></div>
             <h1 className="button-block"> Wizard </h1>
           </Link>
         </button>
 
         <button className="main-block">
-          <Link to="/">
+          <Link to="/character">
             <div className="image-block rogue-image"></div>
             <h1 className="button-block"> Rogue </h1>
           </Link>

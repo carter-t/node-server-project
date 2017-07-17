@@ -11,7 +11,7 @@
 
     @include eightBit;
     background: blue;
-    border: 10px solid red;
+    border: 20px double red;
 
     font-size: 70px;
   }
@@ -26,7 +26,7 @@
 
   .main-block {
     @include boxSize(100%, 25%);
-  
+
 
     .image-block {
       @include boxSize(85%, 100%);
@@ -43,6 +43,14 @@
       background: black;
     }
   }
+}
+
+.wrap {
+  @include boxSize(100%, 100%);
+}
+
+.wrap:hover {
+  border: 10px solid blue;
 }
 
 //Images

@@ -3,16 +3,6 @@ import router from './router';
 import {connect} from 'react-redux';
 
 class App extends Component {
-
-  // componentDidMount() {
-  //   getMonsters()
-  //   .then(monsters => {
-  //     this.setState({
-  //       monsters: monsters
-  //     })
-  //   })
-  // }
-
   render() {
     return (
       <div>
@@ -23,9 +13,7 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  return {
-    state: ''
-  }
+  return state;
 }
 
 export default connect(mapStateToProps)(App);

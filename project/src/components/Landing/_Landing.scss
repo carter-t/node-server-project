@@ -11,9 +11,17 @@
 
     @include eightBit;
     background: blue;
-    border: 10px solid red;
+    border: 20px double red;
     font-size: 130px;
   }
+}
+
+.end-message {
+  margin-top: 50px;
+  @include eightBit;
+  @include flexIt(center, center);
+  font-size: 50px;
+  color: white;
 }
 
 //Start Button
@@ -25,11 +33,14 @@
 
   .start-block {
     margin-top: 3px;
-    @include boxSize(100%, 200px);
+    @include boxSize(100%, 300px);
     @include flexIt(center, center);
 
     @include eightBit;
     font-size: 70px;
     background: black;
+  }
+  .start-block:hover {
+    background-color: blue;
   }
 }

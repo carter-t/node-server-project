@@ -68,8 +68,28 @@ table {
     text-overflow: ellipsis;
     text-shadow: 5px 5px 0 red;
     background: blue;
-    border: 10px solid red;
+    border: 20px double red;
     font-size: 130px; }
+
+.end-message {
+  margin-top: 50px;
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  overflow: hidden;
+  border: none;
+  font: normal 100px/1 "VT323", Helvetica, sans-serif;
+  color: yellow;
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-shadow: 5px 5px 0 red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: white; }
 
 .start-bar {
   margin-top: 20vh;
@@ -81,7 +101,7 @@ table {
   .start-bar .start-block {
     margin-top: 3px;
     height: 100%;
-    width: 200px;
+    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,6 +119,8 @@ table {
     text-shadow: 5px 5px 0 red;
     font-size: 70px;
     background: black; }
+  .start-bar .start-block:hover {
+    background-color: blue; }
 
 .sub-title-bar {
   margin-top: 40px;
@@ -126,7 +148,7 @@ table {
     text-overflow: ellipsis;
     text-shadow: 5px 5px 0 red;
     background: blue;
-    border: 10px solid red;
+    border: 20px double red;
     font-size: 70px; }
 
 .main-bar {
@@ -163,6 +185,13 @@ table {
       text-shadow: 5px 5px 0 red;
       font-size: 70px;
       background: black; }
+
+.wrap {
+  height: 100%;
+  width: 100%; }
+
+.wrap:hover {
+  border: 10px solid blue; }
 
 .human-image {
   background-image: url("./images/human.jpg");
@@ -250,6 +279,8 @@ table {
       text-shadow: 5px 5px 0 red;
       font-size: 70px;
       background: black; }
+    .half-block .info-bar-large .next-block:hover {
+      background-color: blue; }
 
 .hero-image {
   background-image: url("./images/character.jpg");
@@ -280,7 +311,29 @@ table {
   text-shadow: 5px 5px 0 red;
   font-size: 55px; }
 
+.log-block2 {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  overflow: hidden;
+  border: none;
+  font: normal 100px/1 "VT323", Helvetica, sans-serif;
+  color: yellow;
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-shadow: 5px 5px 0 red;
+  font-size: 55px;
+  margin-bottom: 20px; }
+
 .stat-button {
+  margin-top: 10px;
   height: 15%;
   width: 100%;
   display: flex;
@@ -306,6 +359,8 @@ table {
     text-shadow: 5px 5px 0 red;
     font-size: 70px;
     background-color: black; }
+  .stat-button .button-bar:hover {
+    background: blue; }
 
 .stat-bar {
   height: 15%;

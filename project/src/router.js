@@ -1,14 +1,15 @@
 import React from 'react';
-import {Route, HashRouter} from 'react-router-dom';
+import {HashRouter, Route} from 'react-router-dom';
 
 import Landing from './components/Landing/Landing';
 import Race from './components/Race/Race';
 import Class from './components/Class/Class';
 import Character from './components/Character/Character';
-import Battleground from './components/Battleground/Battleground'
+import Battleground from './components/Battleground/Battleground';
+import YouWin from './components/YouWin/YouWin';
+import GameOver from './components/GameOver/GameOver';
 
 export default (
-
   <HashRouter>
     <div>
 
@@ -17,6 +18,8 @@ export default (
       <Route component={Class} path="/class" />
       <Route component={Character} path="/character" />
       <Route component={Battleground} path="/battleground" />
+      <Route component={YouWin} path="/win" />
+      <Route component={GameOver} path="/lose" />
 
     </div>
   </HashRouter>

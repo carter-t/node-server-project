@@ -1,14 +1,4 @@
-//Content
-// .main-bar {
-//   margin-top: 40px;
-//   @include boxSize(550px, 100%);
-//   @include flexIt(space-around, stretch);
-
-
-  // .main-block {
-  //   @include boxSize(100%, 25%);
-  
-
+//Content Blocks
     .pic-block {
       @include boxSize(35%, 100%);
     }
@@ -20,7 +10,16 @@
       font-size: 55px;
     }
 
+    .log-block2 {
+      @include boxSize(30%, 100%);
+      @include flexIt(center, center);
+      @include eightBit;
+      font-size: 55px;
+      margin-bottom: 20px;
+    }
+
     .stat-button {
+      margin-top: 10px;
       @include boxSize(15%, 100%);
       @include flexIt(center, center);
 
@@ -31,6 +30,9 @@
         font-size: 70px;
         background-color: black;
       }
+      .button-bar:hover {
+        background: blue;
+      }
     }
 
     .stat-bar {
@@ -40,17 +42,6 @@
       font-size: 55px;
       background-color: black;
     }
-
-    // .button-block {
-    //   @include boxSize(15%, 100%);
-    //   @include flexIt(center, center);
-
-    //   @include eightBit;
-    //   font-size: 70px;
-    //   background: black;
-    // }
-//   }
-// }
 
 //Images
 .hero-pic {

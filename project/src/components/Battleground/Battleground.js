@@ -32,7 +32,7 @@ class Battleground extends Component {
       this.props.updateMonsterAttack(999);
     }
     else if(this.props.cheatCode === 'allDaPoints') {
-      this.props.updateScore(1000000);
+      this.props.updateScore(10000);
     }
     else if(this.props.cheatCode === 'insertQuarter') {
       alert('You\'ve spent your last quarter. You are poor and nobody loves you.');

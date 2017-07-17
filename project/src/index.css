@@ -71,26 +71,6 @@ table {
     border: 20px double red;
     font-size: 130px; }
 
-.end-message {
-  margin-top: 50px;
-  display: inline-block;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  overflow: hidden;
-  border: none;
-  font: normal 100px/1 "VT323", Helvetica, sans-serif;
-  color: yellow;
-  text-align: center;
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  text-shadow: 5px 5px 0 red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  color: white; }
-
 .start-bar {
   margin-top: 20vh;
   height: 20vh;
@@ -394,6 +374,46 @@ table {
   background-size: 60%;
   background-position: center center;
   background-repeat: no-repeat; }
+
+.end-message {
+  margin-top: 50px;
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  overflow: hidden;
+  border: none;
+  font: normal 100px/1 "VT323", Helvetica, sans-serif;
+  color: yellow;
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-shadow: 5px 5px 0 red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: white; }
+
+.end-message {
+  margin-top: 50px;
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  overflow: hidden;
+  border: none;
+  font: normal 100px/1 "VT323", Helvetica, sans-serif;
+  color: yellow;
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-shadow: 5px 5px 0 red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: white; }
 
 body {
   height: 100vh;

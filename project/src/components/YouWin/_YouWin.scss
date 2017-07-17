@@ -1,0 +1,7 @@
+.end-message {
+  margin-top: 50px;
+  @include eightBit;
+  @include flexIt(center, center);
+  font-size: 50px;
+  color: white;
+}

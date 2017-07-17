@@ -16,14 +16,6 @@
   }
 }
 
-.end-message {
-  margin-top: 50px;
-  @include eightBit;
-  @include flexIt(center, center);
-  font-size: 50px;
-  color: white;
-}
-
 //Start Button
 .start-bar {
   margin-top: 20vh;

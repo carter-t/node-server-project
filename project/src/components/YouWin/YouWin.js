@@ -9,7 +9,9 @@ export default function YouWin() {
         <h1 className="title-block"> YOU WIN!!! </h1>
       </div>
 
-      <h1 className="end-message"> Congratulations! You brought relative order to the World of React! </h1>
+      <div className="end-message">
+        <h1> Congratulations! You brought relative order to the World of React! </h1>
+      </div>
 
       <div className="start-bar">
         <Link to="/">

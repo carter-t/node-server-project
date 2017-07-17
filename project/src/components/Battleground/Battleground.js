@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-// import {getMonster} from './../../dux/api';
 import {
-  updateHeroHP, 
-  updateEnemyHP, 
+  updateHeroHP,
   updateScore, 
   updateWin, 
   updateLose,
@@ -13,12 +11,35 @@ import {
   updateRaceType,
   updateGenType,
   updateMonsterHealth,
-  updateMonsterAttack
+  updateMonsterAttack,
+  updateMonsterName
 } from './../../dux/reducer';
 
+
 class Battleground extends Component {
+
+  componentDidMount() {
+    if(this.props.cheatCode === 'masterSword') {
+      this.props.updateNameType('Link');
+      this.props.updateGenType('');
+      this.props.updateClassType('The Hero of Time');
+      this.props.updateRaceType('');
+      this.props.updateHeroHP(10000);
+    } 
+    else if(this.props.cheatCode === 'darkSouls') {
+      this.props.updateMonsterHealth(999999);
+      this.props.updateMonsterName('The Lord of Cinder');
+      this.props.updateMonsterAttack(999);
+    }
+    else if(this.props.cheatCode === 'allDaPoints') {
+      this.props.updateScore(1000000);
+    }
+    else if(this.props.cheatCode === 'insertQuarter') {
+      alert('You\'ve spent your last quarter. You are poor and nobody loves you.');
+    }
+  }
+
   render() {
-    
     const raceGain = () => {
       switch(this.props.raceType) {
         case 'Human': return Math.floor(Math.random() * this.props.monsterAT);
@@ -42,7 +63,7 @@ class Battleground extends Component {
         case 'Paladin': return Math.floor(Math.random() * 151);
         case 'Wizard': return Math.floor(Math.random() * 101);
         case 'Rogue': return Math.floor(Math.random() * 201);
-        case 'The Hero of Time': return 100000;
+        case 'The Hero of Time': return Math.floor(Math.random() * 100000);
         default: return Math.floor(Math.random() * 101);
       }
     };
@@ -184,8 +205,7 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {
-  updateHeroHP, 
-  updateEnemyHP,
+  updateHeroHP,
   updateScore, 
   updateWin, 
   updateLose, 
@@ -194,5 +214,6 @@ export default connect(mapStateToProps, {
   updateRaceType,
   updateGenType,
   updateMonsterHealth,
-  updateMonsterAttack
+  updateMonsterAttack,
+  updateMonsterName
 })(Battleground);

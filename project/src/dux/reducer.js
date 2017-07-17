@@ -10,7 +10,7 @@ export const initialState = {
   cheatCode: '',
   monster: '',
   monsterHP: 0,
-  mosterAT: 0
+  monsterAT: 0
 }
 
 const NAME_TYPE = 'NAME_TYPE';

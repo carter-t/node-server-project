@@ -16,25 +16,19 @@ import {
 } from './../../dux/reducer';
 
 class Character extends Component {
+
+  componentDidMount() {
+    console.log(
+      'CHEATS:' +
+        ' 1. masterSword' +
+        ' 2. darkSouls' +
+        ' 3. allDaPoints' +
+        ' 4. insertQuarter')
+  }
+
   render() {
 
-    const random = Math.floor(Math.random() * 325)
-
-    if(this.props.cheatCode === 'masterSword') {
-      this.props.updateNameType('Link');
-      this.props.updateGenType('');
-      this.props.updateClassType('The Hero of Time');
-      this.props.updateRaceType('');
-    } 
-    else if(this.props.cheatCode === 'darkSouls') {
-      this.props.updateEnemyHP(999999);
-    }
-    else if(this.props.cheatCode === 'allDaPoints') {
-      this.props.updateScore(1000000000);
-    }
-    else if(this.props.cheatCode === 'insertQuarter') {
-      alert('You\'ve spent your last quarter. You are poor and nobody loves you.');
-    }
+    const random = Math.floor(Math.random() * 325);
 
     return (
       <div>
@@ -80,15 +74,17 @@ class Character extends Component {
               <div className="info-bar-large">
                 <Link to="/battleground">
                   <button onClick={ () => {
-                    getMonsterName(random).then(res => {
-                      this.props.updateMonsterName(res)
-                    });
-                    getMonsterHealth(random).then(res => {
-                      this.props.updateMonsterHealth(res)
-                    });
-                    getMonsterAttack(random).then(res => {
-                      this.props.updateMonsterAttack(res)
-                    });
+                    if(this.props.cheatCode !== 'darkSouls') {
+                      getMonsterName(random).then(res => {
+                        this.props.updateMonsterName(res)
+                      });
+                      getMonsterHealth(random).then(res => {
+                        this.props.updateMonsterHealth(res)
+                      });
+                      getMonsterAttack(random).then(res => {
+                        this.props.updateMonsterAttack(res)
+                      });
+                    }
                   }}>
                     <h1 className="next-block"> Next </h1>
                   </button>

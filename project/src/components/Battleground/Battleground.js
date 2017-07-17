@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
+// import {getMonster} from './../../dux/api';
 import {
   updateHeroHP, 
   updateEnemyHP, 
@@ -10,29 +11,31 @@ import {
   updateClassType,
   updateNameType,
   updateRaceType,
-  updateGenType
+  updateGenType,
+  updateMonsterHealth,
+  updateMonsterAttack
 } from './../../dux/reducer';
 
 class Battleground extends Component {
   render() {
-
+    
     const raceGain = () => {
       switch(this.props.raceType) {
-        case 'Human': return Math.floor(Math.random() * 151);
-        case 'Elf': return Math.floor(Math.random() * 201);
-        case 'Dwarf': return Math.floor(Math.random() * 101);
-        default: return Math.floor(Math.random() * 101);
+        case 'Human': return Math.floor(Math.random() * this.props.monsterAT);
+        case 'Elf': return Math.floor(Math.random() * (this.props.monsterAT / 0.8));
+        case 'Dwarf': return Math.floor(Math.random() * (this.props.monsterAT / 1.2));
+        default: return Math.floor(Math.random() * this.props.monsterAT);
       }
-    }
+    };
 
     const raceLoss = () => {
       switch(this.props.raceType) {
-        case 'Human': return Math.floor(Math.random() * 151);
-        case 'Elf': return Math.floor(Math.random() * 101);
-        case 'Dwarf': return Math.floor(Math.random() * 201);
-        default: return Math.floor(Math.random() * 101);
+        case 'Human': return Math.floor(Math.random() * this.props.monsterAT);
+        case 'Elf': return Math.floor(Math.random() * (this.props.monsterAT / 1.2));
+        case 'Dwarf': return Math.floor(Math.random() * (this.props.monsterAT / 0.8));
+        default: return Math.floor(Math.random() * this.props.monsterAT);
       }
-    }
+    };
 
     const classAttack = () => {
       switch(this.props.classType) {
@@ -42,7 +45,7 @@ class Battleground extends Component {
         case 'The Hero of Time': return 100000;
         default: return Math.floor(Math.random() * 101);
       }
-    }
+    };
 
     const classHeal = () => {
       switch(this.props.classType) {
@@ -51,13 +54,13 @@ class Battleground extends Component {
         case 'Rogue': return Math.floor(Math.random() * 101);
         default: return Math.floor(Math.random() * 101);
       }
-    }
+    };
 
     if(this.props.heroHP === 'YOU DIED') {
       this.props.updateLose(true);
-    } else if(this.props.enemyHP === 'DEAD') {
+    } else if(this.props.monsterHP === 'DEAD') {
       this.props.updateWin(true);
-    }
+    };
 
     let finishButton = null;
     if(this.props.win) {
@@ -79,7 +82,7 @@ class Battleground extends Component {
     return (
       <div>
         <div className="sub-title-bar">
-          <h1 className="sub-title-block"> The Dragon's Lair! </h1>
+          <h1 className="sub-title-block"> The Battleground! </h1>
         </div>
 
         <div className="main-bar">
@@ -98,20 +101,20 @@ class Battleground extends Component {
           <div className="main-block">
             <h1 className="button-block"> Stats </h1>
             <div className="stat-bar"> HP {this.props.heroHP} </div>
-            <div className="stat-bar"> Enemy {this.props.enemyHP} </div>
+            <div className="stat-bar"> Enemy {this.props.monsterHP} </div>
             <div className="stat-bar"> Score {this.props.score} </div>
 
             <button className="stat-button" onClick={ () => {
-              let enemyHP = this.props.enemyHP;
+              let enemyHP = this.props.monsterHP;
               let heroHP = this.props.heroHP;
               let damage = classAttack();
               let score = this.props.score;
 
               if(enemyHP > damage && heroHP !== 'YOU DIED') {
-                this.props.updateEnemyHP(enemyHP - damage);
+                this.props.updateMonsterHealth(enemyHP - damage);
                 this.props.updateScore(score + damage);
               } else if(enemyHP <= damage) {
-                this.props.updateEnemyHP('DEAD');
+                this.props.updateMonsterHealth('DEAD');
               }
 
               setTimeout( () => {
@@ -120,7 +123,7 @@ class Battleground extends Component {
                   this.props.updateHeroHP(heroHP - bossAttack);
                 } else if(heroHP <= bossAttack) {
                   this.props.updateHeroHP('YOU DIED');
-                }
+                } console.log(this.props.monsterAT)
               }, 1000)
               }}>
               <div className="button-bar"> Attack </div>
@@ -150,7 +153,7 @@ class Battleground extends Component {
           <div className="main-block">
             <h1 className="button-block"> Enemy </h1>
             <div className="pic-block enemy-pic"></div>
-            <div className="log-block2"> The Dragon of Chaos </div>
+            <div className="log-block2"> {this.props.monster} </div>
 
           {finishButton}
 
@@ -165,7 +168,6 @@ class Battleground extends Component {
 function mapStateToProps(state) {
   return {
     heroHP: state.heroHP,
-    enemyHP: state.enemyHP,
     score: state.score,
     win: state.win,
     lose: state.lose,
@@ -174,7 +176,10 @@ function mapStateToProps(state) {
     nameType: state.nameType,
     genType: state.genType,
     raceType: state.raceType,
-    classType: state.classType
+    classType: state.classType,
+    monster: state.monster,
+    monsterHP: state.monsterHP,
+    monsterAT: state.monsterAT
   }
 }
 
@@ -187,5 +192,7 @@ export default connect(mapStateToProps, {
   updateClassType,
   updateNameType,
   updateRaceType,
-  updateGenType
+  updateGenType,
+  updateMonsterHealth,
+  updateMonsterAttack
 })(Battleground);

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
+import {getMonsterName, getMonsterHealth, getMonsterAttack} from './../../dux/api';
 import {
   updateNameType, 
   updateGenType, 
@@ -8,10 +9,16 @@ import {
   updateRaceType, 
   updateCheatCode, 
   updateScore,
-  updateEnemyHP} from './../../dux/reducer';
+  updateEnemyHP,
+  updateMonsterName,
+  updateMonsterHealth,
+  updateMonsterAttack
+} from './../../dux/reducer';
 
 class Character extends Component {
   render() {
+
+    const random = Math.floor(Math.random() * 325)
 
     if(this.props.cheatCode === 'masterSword') {
       this.props.updateNameType('Link');
@@ -72,7 +79,17 @@ class Character extends Component {
 
               <div className="info-bar-large">
                 <Link to="/battleground">
-                  <button>
+                  <button onClick={ () => {
+                    getMonsterName(random).then(res => {
+                      this.props.updateMonsterName(res)
+                    });
+                    getMonsterHealth(random).then(res => {
+                      this.props.updateMonsterHealth(res)
+                    });
+                    getMonsterAttack(random).then(res => {
+                      this.props.updateMonsterAttack(res)
+                    });
+                  }}>
                     <h1 className="next-block"> Next </h1>
                   </button>
                 </Link>
@@ -94,8 +111,8 @@ function mapStateToProps(state) {
     raceType: state.raceType,
     classType: state.classType,
     cheatCode: state.cheatCode,
-    enemyHp: state.enemyHp,
-    score: state.score
+    score: state.score,
+    monster: state.monster
   }
 }
 
@@ -106,5 +123,8 @@ export default connect(mapStateToProps, {
   updateRaceType, 
   updateCheatCode, 
   updateScore,
-  updateEnemyHP
+  updateEnemyHP,
+  updateMonsterName,
+  updateMonsterHealth,
+  updateMonsterAttack
 })(Character);

@@ -1,17 +1,16 @@
-import {getMonsters} from './api';
-
 export const initialState = {
   nameType: '',
   genType: '',
   raceType: '',
   classType: '',
   heroHP: 500,
-  enemyHP: 1000,
   score: 0,
   win: false,
   lose: false,
   cheatCode: '',
-  monsterList: [],
+  monster: '',
+  monsterHP: 0,
+  mosterAT: 0
 }
 
 const NAME_TYPE = 'NAME_TYPE';
@@ -24,7 +23,9 @@ const SCORE = 'SCORE';
 const WIN = 'WIN';
 const LOSE = 'LOSE';
 const CHEAT_CODE = 'CHEAT_CODE';
-const MONSTERS = 'POST_MONSTERS';
+const MONSTER_NAME = 'MONSTER_NAME';
+const MONSTER_HEALTH = 'MONSTER_HEALTH';
+const MONSTER_ATTACK = 'MONSTER_ATTACK';
 
 export default function reducer(state=initialState, action) {
   switch(action.type) {
@@ -59,8 +60,14 @@ export default function reducer(state=initialState, action) {
     case CHEAT_CODE:
       return Object.assign({}, state, {cheatCode: action.payload});
 
-    case MONSTERS:
-      return Object.assign({}, state, {monsterList: action.payload});
+    case MONSTER_NAME:
+      return Object.assign({}, state, {monster: action.payload});
+
+    case MONSTER_HEALTH:
+      return Object.assign({}, state, {monsterHP: action.payload});
+
+    case MONSTER_ATTACK:
+      return Object.assign({}, state, {monsterAT: action.payload});
 
     default:
       return state;
@@ -137,9 +144,23 @@ export function updateCheatCode(code) {
   }
 }
 
-export function theMonsters() {
+export function updateMonsterName(data) {
   return {
-    type: MONSTERS,
-    payload: getMonsters
+    type: MONSTER_NAME,
+    payload: data
+  }
+}
+
+export function updateMonsterHealth(data) {
+  return {
+    type: MONSTER_HEALTH,
+    payload: data
+  }
+}
+
+export function updateMonsterAttack(data) {
+  return {
+    type: MONSTER_ATTACK,
+    payload: data
   }
 }
